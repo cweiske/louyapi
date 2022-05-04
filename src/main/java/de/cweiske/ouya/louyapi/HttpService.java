@@ -19,7 +19,7 @@ public class HttpService extends Service {
         Log.i("service", "start service");
         super.onCreate();
 
-        server = new HttpServer(8080);
+        server = new HttpServer(8080, getAssets());
         try {
             server.start(NanoHTTPD.SOCKET_READ_TIMEOUT, false);
         } catch (IOException ioe) {
