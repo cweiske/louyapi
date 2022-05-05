@@ -1,11 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:isScrollContainer="false"
+    android:orientation="vertical">
 
     <TextView
-        android:text="Foo"
-        android:textColor="#FFEB3B"
-        android:textSize="60sp">
-    </TextView>
-</GridLayout>
+        android:id="@+id/textView"
+        style="@style/headline"
+        android:text="@string/status" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/status_label"
+                android:text="@string/current_api_server" />
+
+            <TextView
+                android:id="@+id/statusCurrentServer"
+                style="@style/status_value"
+                android:text="@string/loading" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ip_address" />
+
+            <TextView
+                android:id="@+id/statusIpAddress"
+                style="@style/status_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView6"
+                style="@style/status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/louyapi_port_number" />
+
+            <TextView
+                android:id="@+id/statusPortNumber"
+                style="@style/status_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/textView8"
+        style="@style/headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/configuration_management_sdcard_ouya_config_properties" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonUseLouyapi"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickUseLouyapi"
+            android:text="@string/use_local_api"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/buttonUseCweiske"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickUseCweiske"
+            android:text="@string/use_ouya_cweiske_de_api"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/buttonUseDefault"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickUseDefault"
+            android:text="@string/use_default"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonBackupCreate"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickBackupCreate"
+            android:text="@string/create_configuration_backup"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/buttonBackupRestore"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickBackupRestore"
+            android:text="@string/restore_backup"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/backupDate"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickExit"
+        android:text="@string/exit"
+        android:textAllCaps="false" />
+
+</LinearLayout>

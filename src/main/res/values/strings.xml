@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">louyapi</string>
+    <string name="exit">Exit</string>
+    <string name="configuration_management_sdcard_ouya_config_properties">Configuration management: /sdcard/ouya_config.properties</string>
+    <string name="loading">loading…</string>
+    <string name="louyapi_port_number">louyapi port number:</string>
+    <string name="ip_address">IP address:</string>
+    <string name="current_api_server">Current API server:</string>
+    <string name="status">Status</string>
+    <string name="use_local_api">Use local API</string>
+    <string name="use_ouya_cweiske_de_api">Use ouya.cweiske.de API</string>
+    <string name="use_default">Use default</string>
+    <string name="create_configuration_backup">Create configuration backup</string>
+    <string name="restore_backup">Restore backup</string>
 </resources>
