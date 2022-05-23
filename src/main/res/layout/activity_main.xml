@@ -67,6 +67,25 @@
                 android:text="@string/loading" />
         </TableRow>
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView7"
+                style="@style/status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game data version:" />
+
+            <TextView
+                android:id="@+id/statusGameDataVersion"
+                style="@style/status_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loading" />
+        </TableRow>
+
     </TableLayout>
 
     <Space

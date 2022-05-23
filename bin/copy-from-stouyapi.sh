@@ -13,4 +13,5 @@ cp -a "$stouyapidir/www/agreements" .
 cp -a "$stouyapidir/www/api" .
 cp -a "$stouyapidir/www/favicon.ico" .
 cp -a "$stouyapidir/www/gen-qr" .
+cp -a "$stouyapidir/www/game-data-version" .
 cp -a "$stouyapidir/www/updates-ouya_1_1.json" .

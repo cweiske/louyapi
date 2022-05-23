@@ -3,6 +3,7 @@ package de.cweiske.ouya.louyapi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
@@ -13,15 +14,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
+import java.nio.Buffer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Enumeration;
@@ -36,6 +40,7 @@ public class MainActivity extends Activity {
 
     protected String configFilePath;
     protected String configFileBackupPath;
+    protected String gameDataVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +53,23 @@ public class MainActivity extends Activity {
         configFilePath = Environment.getExternalStorageDirectory().getPath() + "/ouya_config.properties";
         configFileBackupPath = Environment.getExternalStorageDirectory().getPath() + "/ouya_config.properties.backup";
 
+        loadGameDataVersion();
         loadStatus();
     }
 
+    protected void loadGameDataVersion() {
+        try {
+            InputStream is = getAssets().open("stouyapi-www/game-data-version", AssetManager.ACCESS_BUFFER);
+            gameDataVersion = new BufferedReader(new InputStreamReader(is)).readLine();
+        } catch (IOException e) {
+            gameDataVersion = "unknown";
+        }
+    }
+
     protected void loadStatus() {
+        TextView statusGameDataVersion = (TextView) findViewById(R.id.statusGameDataVersion);
+        statusGameDataVersion.setText(gameDataVersion);
+
         TextView statusPortNumber = (TextView) findViewById(R.id.statusPortNumber);
         statusPortNumber.setText("8080");
 
