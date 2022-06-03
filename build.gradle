@@ -32,3 +32,8 @@ android {
     }
     compileSdkVersion 16
 }
+
+if (project.hasProperty("signingconfigfile")
+    && new File(project.property("signingconfigfile")).exists()) {
+    apply from: project.property("signingconfigfile");
+}
