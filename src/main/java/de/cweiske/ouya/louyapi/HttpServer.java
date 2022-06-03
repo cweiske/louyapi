@@ -92,6 +92,10 @@ public class HttpServer extends NanoHTTPD {
                 return newFixedLengthResponse(Response.Status.OK, "application/json", content);
             }
 
+        } else if (path.equals("/api/v1/gamers/key")) {
+            //usage: store gamer ouya public key via PUT
+            return newFixedLengthResponse(Response.Status.CREATED, null, "");
+
         } else if (path.equals("/api/v1/search") && session.getParameters().containsKey("q")) {
             //usage: search for games
             String query = session.getParameters().get("q").get(0);
