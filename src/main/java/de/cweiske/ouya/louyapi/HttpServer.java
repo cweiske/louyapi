@@ -28,6 +28,12 @@ public class HttpServer extends NanoHTTPD {
      */
     public Response serve(IHTTPSession session) {
         String path = session.getUri();
+        Log.d(TAG, "serve: " + path);
+        //this happens with "//agreements/marketplace.html". remove double slash.
+        if (path.startsWith("//")) {
+            path = path.substring(1);
+        }
+
         InputStream content;
 
         if (path.equals("/api/v1/status") || path.equals("/generate_204")) {
