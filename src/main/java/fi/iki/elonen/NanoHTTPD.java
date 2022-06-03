@@ -981,6 +981,7 @@ public abstract class NanoHTTPD {
                 safeClose(this.outputStream);
             } finally {
                 safeClose(r);
+                safeClose(this.inputStream);
                 this.tempFileManager.clear();
             }
         }
