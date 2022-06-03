@@ -7,6 +7,8 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 import fi.iki.elonen.NanoHTTPD;
 
@@ -32,6 +34,17 @@ public class HttpServer extends NanoHTTPD {
         //this happens with "//agreements/marketplace.html". remove double slash.
         if (path.startsWith("//")) {
             path = path.substring(1);
+        }
+
+        if (session.getMethod() == Method.POST || session.getMethod() == Method.PUT) {
+            Map<String, String> parameters = new HashMap<String, String>();
+            try {
+                session.parseBody(parameters);
+            } catch (Exception e) {
+                //we do not care about the content
+                //we only parse the body to prevent errors, see
+                // https://github.com/NanoHttpd/nanohttpd/issues/356
+            }
         }
 
         InputStream content;
