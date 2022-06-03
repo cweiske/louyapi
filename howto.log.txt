@@ -1,3 +1,0 @@
-2022-04-27 21:01:30.442 341-569/? W/ActivityManager: Scheduling restart of crashed service de.cweiske.ouya.lostouyapi/.HttpService in 5000ms
-2022-04-27 21:01:35.472 341-354/? I/ActivityManager: Start proc de.cweiske.ouya.lostouyapi for service de.cweiske.ouya.lostouyapi/.HttpService: pid=5877 uid=10050 gids={3003, 1028}
-
